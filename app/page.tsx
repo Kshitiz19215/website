@@ -33,19 +33,29 @@ export default function ARPSolutionsWebsite() {
   // Hero carousel data
   const heroSlides = [
     {
-      image: "/placeholder.svg?height=600&width=1200",
-      title: "Advanced Industrial Automation",
-      caption: "Cutting-edge automation solutions for modern manufacturing",
+      image: "/placeholder1.svg?height=600&width=1200",
+      title: "Powering Your Business with Reliable UPS Solutions",
+      caption: "UPS Systems for Every Business Need",
     },
     {
-      image: "/placeholder.svg?height=600&width=1200",
-      title: "IoT-Enabled Smart Systems",
-      caption: "Connected devices that transform your operations",
+      image: "/placeholder2.svg?height=600&width=1200",
+      title: "Powering Your Journey: Reliable EV Charging",
+      caption: "Charge Green: Sustainable EV Charging Solutions, Eco-friendly charging options for a greener tomorrow.",
     },
     {
-      image: "/placeholder.svg?height=600&width=1200",
-      title: "Custom Electronics Design",
-      caption: "Tailored electronic solutions for your specific needs",
+      image: "/placeholder3.svg?height=600&width=1200",
+      title: "Your Vision, Our Expertise: Signage & Branding Solutions",
+      caption: "We specialize in impactful signage and strategic branding solutions to help businesses thrive",
+    },
+    {
+      image: "/placeholder4.svg?height=600&width=1200",
+      title: "MV Panel",
+      caption: "Providing robust and efficient electrical distribution and control solutions tailored to your specific needs, We expertise in design, manufacturing, and installation of electrical control panels for industrial, commercial, and residential applications",
+    },
+    {
+      image: "/placeholder5.svg?height=600&width=1200",
+      title: "Engineering Excellence",
+      caption: "Providing Comprehensive Engineering Solutions, As single window solutions to your engineering needs.",
     },
   ]
 
@@ -194,35 +204,39 @@ export default function ARPSolutionsWebsite() {
       <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">A</span>
-            </div>
-            <h1 className="text-2xl font-bold text-gray-900">ARP Solutions</h1>
+            <Image
+              src="/placeholder-logo.png"
+              alt="ARP Solutions Logo"
+              width={112}
+              height={112}
+              className="w-28 h-28 object-contain rounded-lg"
+            />
+            <h1 className="text-2xl font-bold text-gray-900 text-[2.25rem] leading-tight">ARP Engineering Solutions</h1>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <button
               onClick={() => scrollToSection("home")}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className="text-gray-700 hover:text-blue-600 transition-colors text-lg md:text-xl font-semibold"
             >
               HOME
             </button>
             <button
               onClick={() => scrollToSection("products")}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className="text-gray-700 hover:text-blue-600 transition-colors text-lg md:text-xl font-semibold"
             >
               PRODUCTS
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className="text-gray-700 hover:text-blue-600 transition-colors text-lg md:text-xl font-semibold"
             >
               SERVICES
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className="text-gray-700 hover:text-blue-600 transition-colors text-lg md:text-xl font-semibold"
             >
               CONTACT
             </button>
@@ -274,15 +288,23 @@ export default function ARPSolutionsWebsite() {
             <div
               key={index}
               className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? "opacity-100" : "opacity-0"
+                index === currentSlide ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
               }`}
             >
               <Image src={slide.image || "/placeholder.svg"} alt={slide.title} fill className="object-cover" />
               <div className="absolute inset-0 bg-black bg-opacity-40" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-white max-w-4xl px-4">
+                <div className="text-center text-white max-w-4xl px-4 flex flex-col items-center justify-center h-full">
                   <h2 className="text-5xl md:text-7xl font-bold mb-4 animate-fade-in">{slide.title}</h2>
                   <p className="text-xl md:text-2xl animate-fade-in">{slide.caption}</p>
+                  <div className="flex justify-center w-full">
+                    <button
+                      onClick={() => scrollToSection("products")}
+                      className="mt-8 px-8 py-3 bg-white hover:bg-gray-200 text-black text-lg font-semibold rounded-lg shadow transition-colors animate-fade-in"
+                    >
+                      Know More
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
